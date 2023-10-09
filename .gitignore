@@ -1,0 +1,11 @@
+# Object files
+*.o
+
+# Executable out file
+libft.a
+
+# libftTester
+libftTester/
+
+# VSCode
+.vscode/
