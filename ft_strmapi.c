@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:32:42 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/10/09 15:03:42 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/10/11 12:02:19 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	char			*r;
+	size_t	i;
+	char	*res;
 
 	if (!s || !f)
 		return (NULL);
-	r = ft_strdup(s);
+	res = ft_strdup(s);
 	i = 0;
 	while (s[i])
 	{
-		r[i] = f(i, s[i]);
+		res[i] = f((unsigned int)i, s[i]);
 		i++;
 	}
-	return (r);
+	return (res);
 }
