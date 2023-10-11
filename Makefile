@@ -67,7 +67,6 @@ $(NAME): $(OBJS)
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar $(ARFLAGS) $(OUT) $(OBJS) $(OBJS_BONUS)
 
-
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
