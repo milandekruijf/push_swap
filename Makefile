@@ -61,11 +61,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(OUT) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar $(ARFLAGS) $(OUT) $(OBJS) $(OBJS_BONUS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
