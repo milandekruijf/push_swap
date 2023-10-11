@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:30:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/10/09 15:30:26 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/10/11 10:39:36 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-	res = (char *)ft_calloc(s1len + s2len + 1, sizeof(char));
+	res = (char *)malloc(sizeof(char) * (s1len + s2len + 1));
 	if (!res)
 		return (NULL);
 	ft_memcpy(res, s1, s1len);
 	ft_memcpy(res + s1len, s2, s2len);
+	res[s1len + s2len] = '\0';
 	return (res);
 }

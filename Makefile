@@ -1,6 +1,6 @@
-NAME = libft.a
+NAME = libft
 
-SRC_FILES = \
+SRCS = \
 	ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
@@ -36,21 +36,44 @@ SRC_FILES = \
 	ft_tolower.c \
 	ft_toupper.c
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
+SRCS_BONUS = \
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c
 
-C_CMD = gcc
-C_ARGS = -Wall -Wextra -Werror
+OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+ARFLAGS = -rcs
+RM = rm -rf
+OUT = $(NAME).a
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	$(C_CMD) $(C_ARGS) -c $(SRC_FILES) -I .
-	ar -rc $(NAME) $(OBJ_FILES)
+$(NAME): $(OBJS)
+	ar $(ARFLAGS) $(OUT) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJS) $(OBJS_BONUS)
+	ar $(ARFLAGS) $(OUT) $(OBJS) $(OBJS_BONUS)
+
 
 clean:
-	rm -f $(NAME)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(OBJ_FILES)
+	$(RM) $(OUT)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

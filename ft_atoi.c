@@ -6,13 +6,13 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 16:10:27 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/10/09 15:02:58 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/10/11 10:49:39 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
 		|| c == ' ');
