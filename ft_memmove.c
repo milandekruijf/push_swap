@@ -14,16 +14,13 @@
 
 static int	ft_is_mem_overlap(void *a, void *b, size_t n)
 {
-	size_t			i;
-	unsigned char	*aptr;
-	unsigned char	*bptr;
+	size_t	i;
 
 	i = 0;
-	aptr = (unsigned char *)a;
-	bptr = (unsigned char *)b;
 	while (i < n)
 	{
-		if (aptr + i == bptr || bptr + i == aptr)
+		if ((unsigned char *)a + i == (unsigned char *)b || (unsigned char *)b
+			+ i == (unsigned char *)a)
 			return (1);
 		i++;
 	}
