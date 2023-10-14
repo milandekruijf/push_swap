@@ -1,4 +1,4 @@
-NAME = libft
+NAME = libft.a
 
 SRCS = \
 	ft_atoi.c \
@@ -54,15 +54,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
 RM = rm -rf
-OUT = $(NAME).a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar $(ARFLAGS) $(OUT) $(OBJS)
+	ar $(ARFLAGS) $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	ar $(ARFLAGS) $(OUT) $(OBJS) $(OBJS_BONUS)
+	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -71,7 +70,7 @@ clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(OUT)
+	$(RM) $(NAME)
 
 re: fclean all
 
