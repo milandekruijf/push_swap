@@ -51,11 +51,23 @@ SRCS_EXTRA = \
 	ft_abs.c \
 	ft_count_digits.c \
 	ft_strcat.c \
-	ft_strncpy.c
+	ft_strncpy.c \
+	ft_strcpy.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 OBJS_EXTRA = $(SRCS_EXTRA:.c=.o)
+
+BONUS ?= 0
+EXTRA ?= 0
+
+ifeq ($(BONUS), 1)
+OBJS += $(OBJS_BONUS)
+endif
+
+ifeq ($(EXTRA), 1)
+OBJS += $(OBJS_EXTRA)
+endif
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -67,11 +79,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus: $(OBJS_BONUS)
-	ar $(ARFLAGS) $(NAME) $(OBJS_BONUS)
+bonus:
+	$(MAKE) BONUS=1 all
 
-extra: $(OBJS_EXTRA)
-	ar $(ARFLAGS) $(NAME) $(OBJS_EXTRA)
+extra:
+	$(MAKE) EXTRA=1 all
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

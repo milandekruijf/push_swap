@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_count_digits.c                                  :+:    :+:            */
+/*   ft_strcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/06 11:28:05 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 11:44:10 by mde-krui      ########   odam.nl         */
+/*   Created: 2023/11/06 11:36:53 by mde-krui      #+#    #+#                 */
+/*   Updated: 2023/11/06 11:48:55 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_digits(int num)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	digit_count;
+	char	*tmp;
 
-	digit_count = 1;
-	while (num / 10)
-	{
-		num /= 10;
-		digit_count++;
-	}
-	return (digit_count);
+	tmp = dest;
+	while (*src)
+		*tmp++ = *src++;
+	*tmp = '\0';
+	return (dest);
 }
