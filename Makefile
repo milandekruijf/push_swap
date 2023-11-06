@@ -35,8 +35,6 @@ SRCS = \
 	ft_substr.c \
 	ft_tolower.c \
 	ft_toupper.c
-
-SRCS_BONUS = \
 	ft_lstadd_back.c \
 	ft_lstadd_front.c \
 	ft_lstclear.c \
@@ -46,8 +44,6 @@ SRCS_BONUS = \
 	ft_lstmap.c \
 	ft_lstnew.c \
 	ft_lstsize.c
-
-SRCS_EXTRA = \
 	ft_abs.c \
 	ft_count_digits.c \
 	ft_strcat.c \
@@ -59,21 +55,9 @@ SRCS_EXTRA = \
 	ft_islower.c \
 	ft_isupper.c \
 	ft_isxdigit.c \
+	ft_strndup.c 
 
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-OBJS_EXTRA = $(SRCS_EXTRA:.c=.o)
-
-BONUS ?= 0
-EXTRA ?= 0
-
-ifeq ($(BONUS), 1)
-OBJS += $(OBJS_BONUS)
-endif
-
-ifeq ($(EXTRA), 1)
-OBJS += $(OBJS_EXTRA)
-endif
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -85,17 +69,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus:
-	$(MAKE) BONUS=1 all
-
-extra:
-	$(MAKE) EXTRA=1 all
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS) $(OBJS_EXTRA)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

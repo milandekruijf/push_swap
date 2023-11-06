@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_strndup.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/10/02 17:12:40 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 12:03:36 by mde-krui      ########   odam.nl         */
+/*   Created: 2023/11/06 12:03:11 by mde-krui      #+#    #+#                 */
+/*   Updated: 2023/11/06 12:03:17 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strndup(const char *s, size_t n)
 {
-	return (ft_strndup(s, sizeof(char) * ft_strlen(s)));
+	char	*res;
+
+	res = (char *)malloc(sizeof(char) * (n + 1));
+	if (!res)
+		return (NULL);
+	ft_memcpy(res, s, n);
+	res[n] = '\0';
+	return (res);
 }

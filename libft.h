@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 11:58:08 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/06 12:03:23 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int					ft_isgraph(int c);
 int					ft_islower(int c);
 int					ft_isupper(int c);
 int					ft_isxdigit(int c);
+char				*ft_strndup(const char *s, size_t n);
 
 #endif
