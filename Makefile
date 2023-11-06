@@ -52,7 +52,13 @@ SRCS_EXTRA = \
 	ft_count_digits.c \
 	ft_strcat.c \
 	ft_strncpy.c \
-	ft_strcpy.c
+	ft_strcpy.c \
+	ft_isblank.c \
+	ft_iscntrl.c \
+	ft_isgraph.c \
+	ft_islower.c \
+	ft_isupper.c \
+	ft_isxdigit.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)

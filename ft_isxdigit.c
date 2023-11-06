@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strcat.c                                        :+:    :+:            */
+/*   ft_isxdigit.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/10/02 16:55:53 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 12:01:51 by mde-krui      ########   odam.nl         */
+/*   Created: 2023/11/06 11:50:57 by mde-krui      #+#    #+#                 */
+/*   Updated: 2023/11/06 11:59:16 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+int	ft_isxdigit(int c)
 {
-	char	*tmp;
-
-	tmp = dest;
-	while (*dest)
-		tmp++;
-	ft_strncat(tmp, src, ft_strlen(src));
-	return (dest);
+	return (ft_isdigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'));
 }
