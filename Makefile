@@ -64,7 +64,8 @@ SRCS = \
 	ft_str_is_uppercase.c \
 	ft_strcapitalize.c \
 	ft_strlowcase.c \
-	ft_count_xdigits.c
+	ft_count_xdigits.c \
+	ft_num_to_hex.c
 
 OBJS = $(SRCS:.c=.o)
 
