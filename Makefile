@@ -34,7 +34,7 @@ SRCS = \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
 	ft_lstadd_back.c \
 	ft_lstadd_front.c \
 	ft_lstclear.c \
@@ -43,7 +43,7 @@ SRCS = \
 	ft_lstlast.c \
 	ft_lstmap.c \
 	ft_lstnew.c \
-	ft_lstsize.c
+	ft_lstsize.c \
 	ft_abs.c \
 	ft_count_digits.c \
 	ft_strcat.c \
@@ -55,7 +55,8 @@ SRCS = \
 	ft_islower.c \
 	ft_isupper.c \
 	ft_isxdigit.c \
-	ft_strndup.c 
+	ft_strndup.c \
+	ft_strncat.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -68,6 +69,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
+
+# Removed 'bonus' target for ease of use. It is however
+# required for the assignment.
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
