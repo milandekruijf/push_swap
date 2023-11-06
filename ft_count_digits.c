@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_count_digits.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/10/02 17:32:12 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 11:28:54 by mde-krui      ########   odam.nl         */
+/*   Created: 2023/11/06 11:28:05 by mde-krui      #+#    #+#                 */
+/*   Updated: 2023/11/06 11:28:29 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_itoa(int num)
+size_t	ft_count_digits(int num)
 {
-	char		*res;
-	size_t		digitcnt;
-	long int	absnum;
+	size_t	digit_count;
 
-	digitcnt = ft_count_digits(num);
-	absnum = ft_abs(num);
-	if (num < 0)
-		digitcnt++;
-	res = malloc(sizeof(char) * (digitcnt + 1));
-	if (!res)
-		return (NULL);
-	res[digitcnt] = '\0';
-	while (digitcnt--)
+	digit_count = 1;
+	while (num / 10)
 	{
-		res[digitcnt] = absnum % 10 + '0';
-		absnum /= 10;
+		num /= 10;
+		digit_count++;
 	}
-	if (num < 0)
-		res[0] = '-';
-	return (res);
+	return (digit_count);
 }

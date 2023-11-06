@@ -47,8 +47,13 @@ SRCS_BONUS = \
 	ft_lstnew.c \
 	ft_lstsize.c
 
+SRCS_EXTRA = \
+	ft_abs.c \
+	ft_count_digits.c
+
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJS_EXTRA = $(SRCS_EXTRA:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -60,8 +65,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+bonus: $(OBJS_BONUS)
+	ar $(ARFLAGS) $(NAME) $(OBJS_BONUS)
+
+extra: $(OBJS_EXTRA)
+	ar $(ARFLAGS) $(NAME) $(OBJS_EXTRA)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
