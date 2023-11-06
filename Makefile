@@ -89,7 +89,7 @@ extra:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS) $(OBJS_EXTRA)
 
 fclean: clean
 	$(RM) $(NAME)
