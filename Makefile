@@ -49,7 +49,9 @@ SRCS_BONUS = \
 
 SRCS_EXTRA = \
 	ft_abs.c \
-	ft_count_digits.c
+	ft_count_digits.c \
+	ft_strcat.c \
+	ft_strncpy.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
