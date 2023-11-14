@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_count_xdigits.c                                 :+:    :+:            */
+/*   ft_strnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/11/06 11:28:05 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 13:44:52 by mde-krui      ########   odam.nl         */
+/*   Created: 2023/11/14 14:55:14 by mde-krui      #+#    #+#                 */
+/*   Updated: 2023/11/14 14:55:16 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_count_xdigits(int num)
+char	*ft_strnew(size_t size)
 {
-	size_t	digit_count;
+	char	*res;
 
-	digit_count = 0;
-	while (num > 0)
-	{
-		num /= 16;
-		digit_count++;
-	}
-	return (digit_count);
+	res = (char *)malloc(size + 1);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, size + 1);
+	return (res);
 }
