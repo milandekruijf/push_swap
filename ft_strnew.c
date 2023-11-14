@@ -6,9 +6,11 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 14:55:14 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/14 14:55:16 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/14 15:02:01 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
