@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 13:48:53 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/14 14:29:46 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ int					ft_str_is_uppercase(char *str);
 char				*ft_strcapitalize(char *str);
 char				*ft_strlowcase(char *str);
 size_t				ft_count_xdigits(int num);
-char				*ft_num_to_hex(unsigned int num);
+char				*ft_ptr_to_hex(void *ptr);
 
 #endif
