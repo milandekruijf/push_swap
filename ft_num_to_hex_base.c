@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 15:11:38 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/14 15:18:08 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/14 15:23:16 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_num_to_hex_base(int num, int base)
 		num /= base;
 	}
 	res[i] = '\0';
+	ft_strrev(res);
 	return (res);
 }
