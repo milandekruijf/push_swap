@@ -69,7 +69,8 @@ SRCS = \
 	ft_digit_to_char.c \
 	ft_strnew.c \
 	ft_num_to_hex_base.c \
-	ft_strrev.c
+	ft_strrev.c \
+	ft_uitoa.c
 
 OBJS = $(SRCS:.c=.o)
 
