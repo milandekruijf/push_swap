@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/20 10:56:00 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 11:56:30 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ size_t				ft_count_int_digits_base(int num, int base);
 char				*ft_ptr_to_hex(void *ptr);
 char				ft_digit_to_char(int num);
 char				*ft_strnew(size_t size);
-char				*ft_num_to_hex_base(int num, int base);
+char				*ft_num_to_hex_base(unsigned int num, int base);
 void				ft_strrev(char *str);
 char				*ft_uitoa(unsigned int num);
 size_t				ft_count_int_digits(int num);
