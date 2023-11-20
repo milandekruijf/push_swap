@@ -6,21 +6,21 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/06 11:28:05 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/06 11:44:10 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 10:52:04 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_digits(int num)
+size_t	ft_count_unsigned_int_digits(unsigned int num)
 {
-	size_t	digit_count;
+	size_t	len;
 
-	digit_count = 1;
-	while (num / 10)
+	len = 0;
+	while (num != 0)
 	{
-		num /= 10;
-		digit_count++;
+		len++;
+		num = num / 10;
 	}
-	return (digit_count);
+	return (len);
 }

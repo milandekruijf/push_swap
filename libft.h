@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/20 10:35:36 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 10:51:52 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 // Extra
 long int			ft_abs(long int num);
-size_t				ft_count_digits(int num);
+size_t				ft_count_unsigned_int_digits(unsigned int num);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);

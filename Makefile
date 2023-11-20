@@ -45,7 +45,7 @@ SRCS = \
 	ft_lstnew.c \
 	ft_lstsize.c \
 	ft_abs.c \
-	ft_count_digits.c \
+	ft_count_unsigned_int_digits.c \
 	ft_strcat.c \
 	ft_strncpy.c \
 	ft_strcpy.c \
