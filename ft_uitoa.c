@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:32:12 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/20 10:57:33 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 11:07:25 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_uitoa(unsigned int num)
 	char *res;
 	int len;
 
+	if (num == 0)
+		return (ft_strdup("0"));
 	len = ft_count_unsigned_int_digits(num);
 	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (!res)
