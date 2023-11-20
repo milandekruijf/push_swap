@@ -46,6 +46,7 @@ SRCS = \
 	ft_lstsize.c \
 	ft_abs.c \
 	ft_count_unsigned_int_digits.c \
+	ft_count_int_digits.c \
 	ft_strcat.c \
 	ft_strncpy.c \
 	ft_strcpy.c \
@@ -64,7 +65,7 @@ SRCS = \
 	ft_str_is_uppercase.c \
 	ft_strcapitalize.c \
 	ft_strlowcase.c \
-	ft_count_digits_base.c \
+	ft_count_int_digits_base.c \
 	ft_ptr_to_hex.c \
 	ft_digit_to_char.c \
 	ft_strnew.c \
