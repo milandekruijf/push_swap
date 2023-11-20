@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/14 15:11:38 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/20 12:00:15 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 12:15:30 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_num_to_hex_base(unsigned int num, int base)
 	size_t	i;
 
 	if (num == 0)
-		return (ft_strdup("1"));
+		return (ft_strdup("0"));
 	res = malloc(sizeof(char) * 20);
 	if (!res)
 		return (NULL);
