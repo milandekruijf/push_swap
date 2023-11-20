@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/06 11:28:05 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/20 10:55:49 by mde-krui      ########   odam.nl         */
+/*   Updated: 2023/11/20 11:21:45 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ size_t	ft_count_int_digits_base(int num, int base)
 	size_t	res;
 
 	res = 1;
-	while (num /= base)
+	while (num / base)
+	{
 		res++;
+		num /= base;
+	}
 	return (res);
 }
