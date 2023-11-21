@@ -6,13 +6,14 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 23:16:55 by muijf         ########   odam.nl         */
+/*   Updated: 2023/11/21 23:19:19 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stdlib.h>

@@ -14,13 +14,19 @@ SRCS = \
 	strchr strsub digittoc isxdigit memchr strrchr strncpy strncmp strncat \
 	strjoin strmapi strlwr strupr wrdlen strsplit strstr strnstr strlcpy \
 	strlcat strcat strisnum strislwr strisupr strcpy striteri strisprint \
-	ptox memcmp uitox putc puti puts
+	ptox memcmp uitox putc puti puts printf/init_state printf/parse_c \
+	printf/parse_d printf/parse_i printf/parse_p printf/parse_s printf/parse_u \
+	printf/parse_x printf/print_all printf/print_c printf/print_d printf/print_i \
+	printf/print_match printf/print_nil printf/print_null printf/print_p \
+	printf/print_percent printf/print_s printf/print_u printf/print_x \
+	printf/print printf/test/test
 
 # Out folder
 OUT_DIR = out
 
 # Object directories
 OBJ_DIR = $(OUT_DIR)/obj
+OBJ_DIRS = $(sort $(dir $(addprefix $(OBJ_DIR)/, $(SRCS))))
 
 # Object files
 OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
@@ -46,12 +52,12 @@ $(NAME): $(OBJS)
 	ar -rcs $(OUT) $(OBJS)
 
 # Compile object files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIRS)
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
 # Create out directory
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIRS):
+	mkdir -p $@
 
 # Clean up object files
 clean:
