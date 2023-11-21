@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:36:17 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 21:41:14 by muijf         ########   odam.nl         */
+/*   Updated: 2023/11/21 21:45:53 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_puti(int n, int fd)
 {
-	ft_putstr(ft_itoa(n), fd);
+	ft_puts(ft_itoa(n), fd);
 }
