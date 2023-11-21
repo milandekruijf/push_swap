@@ -6,7 +6,7 @@ SRC_DIR = src
 
 # Source files. No need to attach the exact file location in the
 # src directory or add the .c file extension.
-SRC_DIR_FILES = \
+SRCS = \
 	abs atoi isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
 	isprint isupper tolower toupper isspace memcpy memmove memset calloc bzero \
 	lstappend lstprepend lstclear lstdelone lstiter lstlast lstmap lstnew \
@@ -20,46 +20,46 @@ SRC_DIR_FILES = \
 OUT_DIR = out
 
 # Object directories
-OUT_DIR_OBJ = $(OUT_DIR)/obj
+OBJ_DIR = $(OUT_DIR)/obj
 
 # Object files
-OUT_DIR_OBJ_FILES = $(addprefix $(OUT_DIR_OBJ)/, $(addsuffix .o, $(SRC_DIR_FILES)))
+OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
 
 # Export lib in the 'out' folder
-OUT_DIR_LIB_FILE = $(OUT_DIR)/lib$(NAME).a
+OUT = $(OUT_DIR)/lib$(NAME).a
 
 # Compiler settings
 CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
-CC_FLAGS_TEST = -fsanitize=address
+CC_TEST_FLAGS = -fsanitize=address
 
 # Enable test flags when TEST is set to 1
 ifeq ($(TEST), 1)
-	CC_FLAGS += $(CC_FLAGS_TEST)
+	CC_FLAGS += $(CC_TEST_FLAGS)
 endif
 
 # Create all the executables
 all: $(NAME)
 
 # Compile the executable
-$(NAME): $(OUT_DIR_OBJ_FILES)
-	ar -rcs $(OUT_DIR_LIB_FILE) $(OUT_DIR_OBJ_FILES)
+$(NAME): $(OBJS)
+	ar -rcs $(OUT) $(OBJS)
 
 # Compile object files
-$(OUT_DIR_OBJ)/%.o: $(SRC_DIR)/%.c | $(OUT_DIR_OBJ)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
 # Create out directory
-$(OUT_DIR_OBJ):
-	mkdir -p $(OUT_DIR_OBJ)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 # Clean up object files
 clean:
-	rm -rf $(OUT_DIR_OBJ_FILES)
+	rm -rf $(OBJS)
 
 # Clean up executable and object files
 fclean: clean
-	rm -rf $(OUT_DIR_LIB_FILE)
+	rm -rf $(OUT)
 
 # Clean up and recompile
 re: fclean all
