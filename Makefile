@@ -1,102 +1,65 @@
-NAME = libft.a
+# Name of the static library
+NAME = ft
 
-SRCS = \
-	ft_atoi.c \
-	ft_bzero.c \
-	ft_calloc.c \
-	ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_isprint.c \
-	ft_itoa.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_memset.c \
-	ft_putchar_fd.c \
-	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
-	ft_putstr_fd.c \
-	ft_split.c \
-	ft_strchr.c \
-	ft_strdup.c \
-	ft_striteri.c \
-	ft_strjoin.c \
-	ft_strlcat.c \
-	ft_strlcpy.c \
-	ft_strlen.c \
-	ft_strmapi.c \
-	ft_strncmp.c \
-	ft_strnstr.c \
-	ft_strrchr.c \
-	ft_strtrim.c \
-	ft_substr.c \
-	ft_tolower.c \
-	ft_toupper.c \
-	ft_lstadd_back.c \
-	ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstmap.c \
-	ft_lstnew.c \
-	ft_lstsize.c \
-	ft_abs.c \
-	ft_count_unsigned_int_digits.c \
-	ft_count_int_digits.c \
-	ft_strcat.c \
-	ft_strncpy.c \
-	ft_strcpy.c \
-	ft_isblank.c \
-	ft_iscntrl.c \
-	ft_isgraph.c \
-	ft_islower.c \
-	ft_isupper.c \
-	ft_isxdigit.c \
-	ft_strndup.c \
-	ft_strncat.c \
-	ft_str_is_alpha.c \
-	ft_str_is_lowercase.c \
-	ft_str_is_numeric.c \
-	ft_str_is_printable.c \
-	ft_str_is_uppercase.c \
-	ft_strcapitalize.c \
-	ft_strlowcase.c \
-	ft_count_int_digits_base.c \
-	ft_ptr_to_hex.c \
-	ft_digit_to_char.c \
-	ft_strnew.c \
-	ft_num_to_hex_base.c \
-	ft_strrev.c \
-	ft_uitoa.c
+# Source directories
+SRC_DIR = src
 
-OBJS = $(SRCS:.c=.o)
+# Source files. No need to attach the exact file location in the
+# src directory or add the .c file extension.
+SRC_DIR_FILES = \
+	abs atoi isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
+	isprint isupper tolower toupper isspace memcpy memmove memset calloc bzero \
+	lstappend lstprepend lstclear lstdelone lstiter lstlast lstmap lstnew \
+	lstsize itoa uitoa strdup strndup strrev digitlen strlen strnew strtrim \
+	strchr strsub digittoc isxdigit memchr strrchr strncpy strncmp strncat \
+	strjoin strmapi strlwr strupr wrdlen strsplit strstr strnstr strlcpy \
+	strlcat strcat strisnum strislwr strisupr strcpy striteri strisprint \
+	ptox memcmp uitox putc putnbr putstr \
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-ARFLAGS = -rcs
-RM = rm -rf
+# Out folder
+OUT_DIR = out
 
+# Object directories
+OUT_DIR_OBJ = $(OUT_DIR)/obj
+
+# Object files
+OUT_DIR_OBJ_FILES = $(addprefix $(OUT_DIR_OBJ)/, $(addsuffix .o, $(SRC_DIR_FILES)))
+
+# Export lib in the 'out' folder
+OUT_DIR_LIB_FILE = $(OUT_DIR)/lib$(NAME).a
+
+# Compiler settings
+CC = cc
+CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS_TEST = -fsanitize=address
+
+# Enable test flags when TEST is set to 1
+ifeq ($(TEST), 1)
+	CC_FLAGS += $(CC_FLAGS_TEST)
+endif
+
+# Create all the executables
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar $(ARFLAGS) $(NAME) $(OBJS)
+# Compile the executable
+$(NAME): $(OUT_DIR_OBJ_FILES)
+	ar -rcs $(OUT_DIR_LIB_FILE) $(OUT_DIR_OBJ_FILES)
 
-# Removed 'bonus' target for ease of use. It is however
-# required for the assignment.
+# Compile object files
+$(OUT_DIR_OBJ)/%.o: $(SRC_DIR)/%.c | $(OUT_DIR_OBJ)
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Create out directory
+$(OUT_DIR_OBJ):
+	mkdir -p $(OUT_DIR_OBJ)
 
+# Clean up object files
 clean:
-	$(RM) $(OBJS)
+	rm -rf $(OUT_DIR_OBJ_FILES)
 
+# Clean up executable and object files
 fclean: clean
-	$(RM) $(NAME)
+	rm -rf $(OUT_DIR_LIB_FILE)
 
+# Clean up and recompile
 re: fclean all
-
-.PHONY: all clean fclean re bonus

@@ -1,11 +1,5 @@
-# Object files
-*.o
-
-# Executable out file
-libft.a
-
 # VSCode
 .vscode/
 
-# Testers
-libft-war-machine/
+# Compiled
+out/
