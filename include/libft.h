@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 23:19:19 by muijf         ########   odam.nl         */
+/*   Updated: 2023/11/22 00:58:01 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,11 @@ void				ft_puts(const char *s, int fd);
 void				ft_puti(int n, int fd);
 
 int					ft_printf(const char *format, ...);
+
+char				*getline(int fd);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 #endif
