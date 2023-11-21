@@ -14,7 +14,7 @@ SRCS = \
 	strchr strsub digittoc isxdigit memchr strrchr strncpy strncmp strncat \
 	strjoin strmapi strlwr strupr wrdlen strsplit strstr strnstr strlcpy \
 	strlcat strcat strisnum strislwr strisupr strcpy striteri strisprint \
-	ptox memcmp uitox putc putnbr putstr \
+	ptox memcmp uitox putc puti puts
 
 # Out folder
 OUT_DIR = out
