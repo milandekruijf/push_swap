@@ -21,9 +21,6 @@ OBJ_DIR = $(OUT_DIR)/obj
 
 OUT = $(OUT_DIR)/lib$(NAME).a
 
-OBJ_DIRS = $(sort $(dir $(addprefix $(OBJ_DIR)/, $(SRCS))))
-OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
-
 CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
 CC_TEST_FLAGS = -fsanitize=address
@@ -35,21 +32,36 @@ endif
 
 MAKEFLAGS += --no-print-directory
 
+# Processing
+OBJ_DIRS = $(sort $(dir $(addprefix $(OBJ_DIR)/, $(SRCS))))
+OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
+
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
+
+# Targets
 all: $(NAME)
+	@echo "$(NAME): $(GREEN)compiled all$(RESET)"
 
 $(NAME): $(OBJS)
 	@ar -rcs $(OUT) $(OBJS)
+	@echo "$(NAME): $(GREEN)compiled $(NAME) to $(OUT)$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIRS)
 	@$(CC) $(CC_FLAGS) -c $< -o $@
+	@echo "$(NAME): $(GREEN)compiled $< to $@$(RESET)"
 
 $(OBJ_DIRS):
 	@mkdir -p $@
+	@echo "$(NAME): $(GREEN)created directory $@$(RESET)"
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJ_DIR)
+	@echo "$(NAME): $(GREEN)$(OBJ_DIR) has been cleaned up$(RESET)"
 
 fclean: clean
-	@rm -rf $(OUT)
+	@rm -rf $(OUT_DIR)
+	@echo "$(NAME): $(GREEN)$(OUT_DIR) directory has been cleaned up$(RESET)"
 
 re: fclean all
