@@ -1,4 +1,11 @@
-NAME = ft
+# ██╗     ██╗██████╗ ███████╗████████╗
+# ██║     ██║██╔══██╗██╔════╝╚══██╔══╝
+# ██║     ██║██████╔╝█████╗     ██║   
+# ██║     ██║██╔══██╗██╔══╝     ██║   
+# ███████╗██║██████╔╝██║        ██║   
+# ╚══════╝╚═╝╚═════╝ ╚═╝        ╚═╝   
+
+NAME = libft
 
 SRCS = \
 	abs atoi isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
@@ -19,7 +26,7 @@ SRC_DIR = src
 OUT_DIR = out
 OBJ_DIR = $(OUT_DIR)/obj
 
-OUT = $(OUT_DIR)/lib$(NAME).a
+OUT = $(OUT_DIR)/$(NAME).a
 
 CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
