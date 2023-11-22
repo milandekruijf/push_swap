@@ -1,11 +1,5 @@
-# Name of the static library
 NAME = ft
 
-# Source directories
-SRC_DIR = src
-
-# Source files. No need to attach the exact file location in the
-# src directory or add the .c file extension.
 SRCS = \
 	abs atoi isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
 	isprint isupper tolower toupper isspace memcpy memmove memset calloc bzero \
@@ -21,20 +15,15 @@ SRCS = \
 	printf/print_percent printf/print_s printf/print_u printf/print_x \
 	printf/print getline
 
-# Out folder
+SRC_DIR = src
 OUT_DIR = out
-
-# Object directories
 OBJ_DIR = $(OUT_DIR)/obj
-OBJ_DIRS = $(sort $(dir $(addprefix $(OBJ_DIR)/, $(SRCS))))
 
-# Object files
-OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
-
-# Export lib in the 'out' folder
 OUT = $(OUT_DIR)/lib$(NAME).a
 
-# Compiler settings
+OBJ_DIRS = $(sort $(dir $(addprefix $(OBJ_DIR)/, $(SRCS))))
+OBJS = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRCS)))
+
 CC = cc
 CC_FLAGS = -Wall -Wextra -Werror
 CC_TEST_FLAGS = -fsanitize=address
@@ -44,28 +33,21 @@ ifeq ($(TEST), 1)
 	CC_FLAGS += $(CC_TEST_FLAGS)
 endif
 
-# Create all the executables
 all: $(NAME)
 
-# Compile the executable
 $(NAME): $(OBJS)
-	ar -rcs $(OUT) $(OBJS)
+	@ar -rcs $(OUT) $(OBJS)
 
-# Compile object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIRS)
-	$(CC) $(CC_FLAGS) -c $< -o $@
+	@$(CC) $(CC_FLAGS) -c $< -o $@
 
-# Create out directory
 $(OBJ_DIRS):
-	mkdir -p $@
+	@mkdir -p $@
 
-# Clean up object files
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
-# Clean up executable and object files
 fclean: clean
-	rm -rf $(OUT)
+	@rm -rf $(OUT)
 
-# Clean up and recompile
 re: fclean all
