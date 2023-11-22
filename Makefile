@@ -33,6 +33,8 @@ ifeq ($(TEST), 1)
 	CC_FLAGS += $(CC_TEST_FLAGS)
 endif
 
+MAKEFLAGS += --no-print-directory
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
