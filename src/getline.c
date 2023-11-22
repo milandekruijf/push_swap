@@ -6,7 +6,7 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 00:56:12 by muijf         #+#    #+#                 */
-/*   Updated: 2023/11/22 00:58:46 by muijf         ########   odam.nl         */
+/*   Updated: 2023/11/22 01:21:33 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static char	*read_from_fd(int fd, char *rem)
 	return (rem);
 }
 
-char	*getline(int fd)
+char	*ft_getline(int fd)
 {
 	static char	*rem[1024];
 	char		*line;
@@ -67,6 +67,8 @@ char	*getline(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	if (!rem[fd])
+		rem[fd] = ft_strdup("");
 	rem[fd] = read_from_fd(fd, rem[fd]);
 	if (!rem[fd])
 		return (NULL);
