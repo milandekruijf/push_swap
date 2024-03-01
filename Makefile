@@ -30,14 +30,19 @@ INC_DIR = include
 OUT = $(OUT_DIR)/$(NAME).a
 
 CC = cc
-CC_FLAGS = -I$(INC_DIR) -Wall -Wextra -Werror 
-CC_TEST_FLAGS = -fsanitize=address
+CC_FLAGS = -I$(INC_DIR)
 
 # Enable test flags when TEST is set to 1
 ifeq ($(TEST), 1)
-	CC_FLAGS += $(CC_TEST_FLAGS)
+	CC_FLAGS += -fsanitize=address
 endif
 
+# Enable strict by default
+ifneq ($(STRICT), 1)
+	CC_FLAGS += -Wall -Wextra -Werror
+endif
+
+# Do not print 'entering directory' messages
 MAKEFLAGS += --no-print-directory
 
 # Processing
