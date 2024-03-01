@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   strlcat.c                                          :+:    :+:            */
+/*   strcmp.c                                           :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
+/*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/10/02 16:55:53 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
+/*   Created: 2024/03/01 11:10:19 by muijf         #+#    #+#                 */
+/*   Updated: 2024/03/01 11:10:29 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (i < size && dest[i])
-		i++;
-	while ((i + j + 1) < size && src[j])
+	while (*s1 && *s1 == *s2)
 	{
-		dest[i + j] = src[j];
-		j++;
+		s1++;
+		s2++;
 	}
-	if (i != size)
-		dest[i + j] = '\0';
-	return (i + ft_strlen(src));
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

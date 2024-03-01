@@ -20,16 +20,17 @@ SRCS = \
 	printf/parse_x printf/print_all printf/print_c printf/print_d printf/print_i \
 	printf/print_match printf/print_nil printf/print_null printf/print_p \
 	printf/print_percent printf/print_s printf/print_u printf/print_x \
-	printf/print getline
+	printf/print getline strcmp
 
 SRC_DIR = src
 OUT_DIR = out
 OBJ_DIR = $(OUT_DIR)/obj
+INC_DIR = include
 
 OUT = $(OUT_DIR)/$(NAME).a
 
 CC = cc
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -I$(INC_DIR) -Wall -Wextra -Werror 
 CC_TEST_FLAGS = -fsanitize=address
 
 # Enable test flags when TEST is set to 1

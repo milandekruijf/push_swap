@@ -6,11 +6,11 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 15:24:34 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 17:42:40 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

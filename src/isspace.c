@@ -6,11 +6,11 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/21 16:55:05 by muijf         #+#    #+#                 */
-/*   Updated: 2023/11/21 23:13:31 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 bool	ft_isspace(int c)
 {

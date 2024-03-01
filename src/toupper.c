@@ -6,15 +6,14 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 15:04:12 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 16:50:23 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+int	ft_toupper(int c) {
+  if (c >= 'a' && c <= 'z')
+    return (c - 32);
+  return (c);
 }

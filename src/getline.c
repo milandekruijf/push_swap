@@ -6,11 +6,11 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/22 00:56:12 by muijf         #+#    #+#                 */
-/*   Updated: 2023/11/22 01:21:33 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static char	*get_first_line(char *s)
 {

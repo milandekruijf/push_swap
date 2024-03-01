@@ -6,11 +6,11 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/21 17:46:13 by muijf         #+#    #+#                 */
-/*   Updated: 2023/11/21 17:46:23 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 char	*ft_strlwr(char *str)
 {

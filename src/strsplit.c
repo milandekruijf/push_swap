@@ -6,11 +6,11 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 17:31:32 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/21 17:50:03 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:11:12 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static void	*ft_strsplit_memcheck(char **split, size_t i)
 {
