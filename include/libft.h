@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2023/11/22 01:03:39 by muijf         ########   odam.nl         */
+/*   Updated: 2024/03/01 11:14:32 by muijf         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ size_t				ft_strlen(const char *s);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
