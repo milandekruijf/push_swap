@@ -73,7 +73,7 @@ clean:
 	@rm -rf $(OBJ_DIR)
 	@echo "$(NAME): $(GREEN)$(OBJ_DIR) has been cleaned up$(RESET)"
 
-fclean: clean
+fclean:
 	@rm -rf $(OUT_DIR)
 	@echo "$(NAME): $(GREEN)$(OUT_DIR) directory has been cleaned up$(RESET)"
 
