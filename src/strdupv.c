@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/10 15:22:42 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:29:16 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/10 15:31:26 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	**ft_strdupv(char *const *src)
 			free_strdupv(dst, i);
 			return (NULL);
 		}
+		i++;
 	}
 	dst[cnt] = NULL;
 	return (dst);
