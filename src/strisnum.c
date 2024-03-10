@@ -14,6 +14,8 @@
 
 bool	ft_strisnum(const char *s)
 {
+	if (*s == '+' || *s == '-')
+		s++;
 	while (*s)
 	{
 		if (!ft_isdigit(*s++))
