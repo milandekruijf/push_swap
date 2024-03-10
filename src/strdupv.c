@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/10 15:22:42 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:25:31 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/10 15:29:16 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	free_strdupv(char **dst, int i)
 	free(dst);
 }
 
-char	**ft_strdupv(const char **src)
+char	**ft_strdupv(char *const *src)
 {
 	int		i;
 	int		cnt;

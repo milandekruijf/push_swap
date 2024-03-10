@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:25:07 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/10 15:29:30 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 char				*ft_strndup(const char *s, size_t n);
 char				*ft_strdup(const char *s);
-char				**ft_strdupv(const char **src);
+char				**ft_strdupv(char *const *src);
 void				ft_strrev(char *str);
 char				*ft_strnew(size_t size);
 char				*ft_strtrim(const char *s, const char *set);
