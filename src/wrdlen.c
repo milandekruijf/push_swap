@@ -12,19 +12,21 @@
 
 #include "libft.h"
 
-size_t	ft_wrdlen(char const *s, char c) {
-  size_t wrdlen;
+size_t	ft_wrdlen(char const *s, char c)
+{
+	size_t	wrdlen;
 
-  if (!*s)
-    return (0);
-  wrdlen = 0;
-  while (*s) {
-    while (*s == c)
-      s++;
-    if (*s)
-      wrdlen++;
-    while (*s != c && *s)
-      s++;
-  }
-  return (wrdlen);
+	if (!*s)
+		return (0);
+	wrdlen = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+			wrdlen++;
+		while (*s != c && *s)
+			s++;
+	}
+	return (wrdlen);
 }
