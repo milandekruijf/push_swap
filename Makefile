@@ -20,7 +20,7 @@ SRCS = \
 	printf/parse_x printf/print_all printf/print_c printf/print_d printf/print_i \
 	printf/print_match printf/print_nil printf/print_null printf/print_p \
 	printf/print_percent printf/print_s printf/print_u printf/print_x \
-	printf/print getline strcmp
+	printf/print getline strcmp strdupv
 
 SRC_DIR = src
 OUT_DIR = out
