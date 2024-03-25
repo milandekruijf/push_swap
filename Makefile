@@ -10,7 +10,7 @@ CHECKER_NAME = checker
 
 SRCS = \
 	main utils state stack/push stack/rotate stack/swap stack/create \
-	args stack/distance stack/byte stack/index instructions/pa \
+	args validation stack/distance stack/byte stack/index instructions/pa \
 	stack/mem instructions/pb instructions/ra instructions/rb instructions/rr \
 	stack/min instructions/rra instructions/rrb instructions/rrr instructions/sa \
 	instructions/sb instructions/ss stack/sort/radix stack/sort/simple \
@@ -19,7 +19,7 @@ CHECKER_SRCS = \
 	checker/main checker/print checker/utils checker/instructions state stack/push \
 	stack/rotate stack/swap stack/append stack/sort/utils stack/create utils args \
 	stack/mem stack/last stack/size stack/index stack/sort/radix stack/sort/simple \
-	stack/min stack/distance stack/byte instructions/pa instructions/pb \
+	validation stack/min stack/distance stack/byte instructions/pa instructions/pb \
 	instructions/ra instructions/rra instructions/sa
 
 SRC_DIR = src
