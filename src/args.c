@@ -6,7 +6,7 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/23 13:54:38 by muijf         #+#    #+#                 */
-/*   Updated: 2024/03/25 12:36:20 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 12:48:24 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ void	validate_arg(t_state *state, int i)
 	{
 		if (!state->args[i][0])
 		{
-			free_state(state);
+			free_args(state);
 			exit_with_error("empty");
 		}
 		if (!ft_strisnum(state->args[i]))
 		{
-			free_state(state);
+			free_args(state);
 			exit_with_error("can only contain numbers");
 		}
 		if (i != j && ft_atoi(state->args[i]) == ft_atoi(state->args[j]))
 		{
-			free_state(state);
+			free_args(state);
 			exit_with_error("duplicate numbers");
 		}
 		j++;
