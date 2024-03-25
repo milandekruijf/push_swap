@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/14 11:43:52 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:10:47 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 13:53:51 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHARED_H
 
 # include "libft.h"
+# include "limits.h"
 
 typedef struct s_stack
 {
