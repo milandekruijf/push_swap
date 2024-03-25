@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/14 11:43:52 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/25 13:53:51 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 14:12:02 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_state
 	t_stack			**a_stack;
 	t_stack			**b_stack;
 }					t_state;
+
+void				exit_with_error(char *msg);
 
 t_state				init_state(int argc, char **argv);
 void				free_state(t_state *state);

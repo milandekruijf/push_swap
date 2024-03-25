@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/14 11:43:52 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/25 13:53:48 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 14:11:58 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "libft.h"
 # include "shared.h"
-
-void	exit_with_error(char *msg);
 
 void	free_strsplit(char **str);
 
