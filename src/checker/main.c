@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/14 11:41:48 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:34:09 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 14:09:05 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@ int	main(int argc, char **argv)
 		instruction = ft_getline(STDIN_FILENO);
 		if (!instruction)
 			break ;
-		do_instruction(strip_newline(instruction), &state);
+		if (do_instruction(strip_newline(instruction), &state) == -1)
+		{
+			free(instruction);
+			break ;
+		}
 		free(instruction);
 	}
 	print_result(&state);
 	free_state(&state);
-	return (0);
+	return (EXIT_SUCCESS);
 }
