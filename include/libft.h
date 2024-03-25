@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/02 14:31:20 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/10 15:29:30 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 15:32:25 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_list
 int					ft_abs(int n);
 
 int					ft_atoi(const char *n);
+long				ft_atol(const char *n);
 char				*ft_itoa(int n);
 char				*ft_uitoa(unsigned int n);
 char				ft_digittoc(int digit);

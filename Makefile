@@ -8,7 +8,7 @@
 NAME = libft
 
 SRCS = \
-	abs atoi isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
+	abs atoi atol isalnum isalpha isascii isblank iscntrl isdigit isgraph islower \
 	isprint isupper tolower toupper isspace memcpy memmove memset calloc bzero \
 	lstappend lstprepend lstclear lstdelone lstiter lstlast lstmap lstnew \
 	lstsize itoa uitoa strdup strndup strrev digitlen strlen strnew strtrim \
