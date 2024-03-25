@@ -46,7 +46,7 @@ ifeq ($(TEST), 1)
 endif
 
 # Enable strict by default
-ifneq ($(STRICT), 1)
+ifneq ($(STRICT), 0)
 	CFLAGS += -Wall -Wextra -Werror
 endif
 

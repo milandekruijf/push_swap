@@ -6,52 +6,59 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/23 13:54:38 by muijf         #+#    #+#                 */
-/*   Updated: 2024/03/10 15:25:57 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 12:11:46 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	validate_args(char **args)
+void	validate_arg(t_state *state, int i)
 {
-	int	i;
 	int	j;
 
-	i = 0;
 	j = 0;
-	while (args[i])
+	while (state->args[j])
 	{
-		j = 0;
-		while (args[j])
+		if (!state->args[i][0])
 		{
-			if (i == j)
-			{
-				j++;
-				continue ;
-			}
-			if (!args[i][0])
-				exit_with_error("empty");
-			if (!ft_strisnum(args[i]))
-				exit_with_error("can only contain numbers");
-			if (ft_atoi(args[i]) == ft_atoi(args[j++]))
-				exit_with_error("duplicate numbers");
+			free_state(state);
+			exit_with_error("empty");
 		}
-		i++;
+		if (!ft_strisnum(state->args[i]))
+		{
+			free_state(state);
+			exit_with_error("can only contain numbers");
+		}
+		if (i != j && ft_atoi(state->args[i]) == ft_atoi(state->args[j]))
+		{
+			free_state(state);
+			exit_with_error("duplicate numbers");
+		}
+		j++;
 	}
 }
 
-char	**get_args(int argc, char **argv)
+void	validate_args(t_state *state)
 {
-	char	**args;
+	int	i;
 
-	if (argc < 2)
-		return (NULL);
-	if (argc == 2)
-		args = ft_strsplit(argv[1], ' ');
+	i = 0;
+	while (state->args[i])
+		validate_arg(state, i++);
+}
+
+void	extract_args(t_state *state, int argc, char **argv)
+{
+	state->argc = argc;
+	if (state->argc < 2)
+		exit_with_error("no arguments");
+	if (state->argc == 2)
+		state->args = ft_strsplit(argv[1], ' ');
 	else
-		args = ft_strdupv(++argv);
-	validate_args(args);
-	return (args);
+		state->args = ft_strdupv(++argv);
+	if (!state->args)
+		exit_with_error("malloc failed");
+	validate_args(state);
 }
 
 void	free_args(t_state *state)
