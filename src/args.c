@@ -6,7 +6,7 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/23 13:54:38 by muijf         #+#    #+#                 */
-/*   Updated: 2024/03/25 13:59:39 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 15:33:37 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	validate_arg(t_state *state, int i)
 	{
 		free_args(state);
 		exit_with_error("can only contain numbers");
+	}
+	if (!ft_atol(state->args[i]))
+	{
+		free_args(state);
+		exit_with_error("overflow");
 	}
 	j = 0;
 	while (state->args[j])
