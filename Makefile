@@ -47,7 +47,7 @@ endif
 
 # Enable strict by default
 ifneq ($(STRICT), 0)
-	CFLAGS += -Wall -Wextra -Werror
+	CFLAGS += -Wall -Wextra -Werror -g3
 endif
 
 # Do not print 'entering directory' messages

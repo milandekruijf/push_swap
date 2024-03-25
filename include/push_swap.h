@@ -6,7 +6,7 @@
 /*   By: mde-krui <mde-krui@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/14 11:43:52 by mde-krui      #+#    #+#                 */
-/*   Updated: 2024/03/25 12:02:39 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 12:25:19 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	exit_with_error(char *msg);
 
 void	free_strsplit(char **str);
 
-void	malloc_state(t_state *state);
+void	malloc_stacks(t_state *state);
 
 void	extract_args(t_state *state, int argc, char **argv);
 void	free_args(t_state *state);
