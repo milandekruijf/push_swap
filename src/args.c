@@ -6,7 +6,7 @@
 /*   By: muijf <muijf@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/23 13:54:38 by muijf         #+#    #+#                 */
-/*   Updated: 2024/03/25 12:20:31 by mde-krui      ########   odam.nl         */
+/*   Updated: 2024/03/25 12:36:20 by mde-krui      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,9 @@ void	extract_args(t_state *state, int argc, char **argv)
 	if (state->argc < 2)
 		exit_with_error("no arguments");
 	if (state->argc == 2)
-	{
 		state->args = ft_strsplit(argv[1], ' ');
-		if (!state->args)
-			exit_with_error("malloc failed");
-	}
 	else
-	{
 		state->args = ft_strdupv(++argv);
-		if (!state->args)
-			exit_with_error("malloc failed");
-	}
 	if (!state->args)
 		exit_with_error("malloc failed");
 	validate_args(state);
